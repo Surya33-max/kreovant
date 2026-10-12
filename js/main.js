@@ -117,14 +117,39 @@
       document.getElementById('menuToggle')?.setAttribute('aria-expanded', 'false');
     }
   }));
-  document.getElementById('contactForm')?.addEventListener('submit', event => {
+  const contactForm = document.getElementById('contactForm');
+  contactForm?.addEventListener('submit', async event => {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const subject = encodeURIComponent('Kreovant enquiry: ' + form.get('interest'));
-    const body = encodeURIComponent('Name: ' + form.get('name') + '\nEmail: ' + form.get('email') + '\nInterest: ' + form.get('interest') + '\n\n' + (form.get('message') || ''));
+    if (contactForm.dataset.sending === 'true') return;
+    const submitButton = contactForm.querySelector('button[type="submit"]');
     const note = document.getElementById('formNote');
-    if (note) note.textContent = 'Opening your email app with your enquiry addressed to Kreovant.';
-    window.location.href = 'mailto:suryalh44@gmail.com?subject=' + subject + '&body=' + body;
+    const formData = new FormData(contactForm);
+    const payload = Object.fromEntries(formData.entries());
+    contactForm.dataset.sending = 'true';
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Sending… <span aria-hidden="true">↗</span>';
+    }
+    if (note) note.textContent = 'Sending your enquiry securely…';
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.ok) throw new Error(result.error || 'Could not send your enquiry.');
+      if (note) note.textContent = result.message || 'Your enquiry has been sent.';
+      contactForm.reset();
+    } catch (error) {
+      if (note) note.textContent = error.message || 'Email delivery failed. Please try again shortly.';
+    } finally {
+      contactForm.dataset.sending = 'false';
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Send enquiry <span aria-hidden="true">↗</span>';
+      }
+    }
   });
   document.getElementById('year').textContent = new Date().getFullYear();
   applyFilters();
