@@ -151,6 +151,21 @@
       }
     }
   });
+
+  // Casual-inspection deterrents only. Frontend assets remain public to browsers.
+  document.addEventListener('contextmenu', event => event.preventDefault());
+  document.addEventListener('keydown', event => {
+    const key = (event.key || '').toLowerCase();
+    const devToolsShortcut =
+      key === 'f12' ||
+      (event.ctrlKey && event.shiftKey && ['i', 'j', 'c'].includes(key)) ||
+      (event.metaKey && event.altKey && ['i', 'j', 'c'].includes(key)) ||
+      ((event.ctrlKey || event.metaKey) && key === 'u');
+    if (devToolsShortcut) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }, true);
   document.getElementById('year').textContent = new Date().getFullYear();
   applyFilters();
 })();
