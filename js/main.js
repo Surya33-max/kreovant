@@ -147,7 +147,7 @@
       contactForm.dataset.sending = 'false';
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.innerHTML = 'Send enquiry <span aria-hidden="true">↗</span>';
+        submitButton.innerHTML = 'Send email <span aria-hidden="true">↗</span>';
       }
     }
   });
