@@ -1,0 +1,119 @@
+[
+  {
+    "id": "resume",
+    "name": "Start Bootstrap Resume",
+    "source": "https://github.com/StartBootstrap/startbootstrap-resume.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-resume-studio",
+    "action": "audit_then_rebuild",
+    "notes": "Use as inspiration/source for license review; do not repackage unchanged. Build an independent portfolio/CV product."
+  },
+  {
+    "id": "agency",
+    "name": "Start Bootstrap Agency",
+    "source": "https://github.com/StartBootstrap/startbootstrap-agency.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-studio-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original studio kit."
+  },
+  {
+    "id": "freelancer",
+    "name": "Start Bootstrap Freelancer",
+    "source": "https://github.com/StartBootstrap/startbootstrap-freelancer.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-freelancer-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original freelancer kit."
+  },
+  {
+    "id": "creative",
+    "name": "Start Bootstrap Creative",
+    "source": "https://github.com/StartBootstrap/startbootstrap-creative.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-creative-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original creative landing kit."
+  },
+  {
+    "id": "grayscale",
+    "name": "Start Bootstrap Grayscale",
+    "source": "https://github.com/StartBootstrap/startbootstrap-grayscale.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-grayscale-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original minimal site kit."
+  },
+  {
+    "id": "clean-blog",
+    "name": "Start Bootstrap Clean Blog",
+    "source": "https://github.com/StartBootstrap/startbootstrap-clean-blog.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-publisher-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original publishing kit."
+  },
+  {
+    "id": "landing-page",
+    "name": "Start Bootstrap Landing Page",
+    "source": "https://github.com/StartBootstrap/startbootstrap-landing-page.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-launch-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original launch kit."
+  },
+  {
+    "id": "new-age",
+    "name": "Start Bootstrap New Age",
+    "source": "https://github.com/StartBootstrap/startbootstrap-new-age.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-app-launch-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original app launch kit."
+  },
+  {
+    "id": "coming-soon",
+    "name": "Start Bootstrap Coming Soon",
+    "source": "https://github.com/StartBootstrap/startbootstrap-coming-soon.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-waitlist-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original waitlist kit."
+  },
+  {
+    "id": "stylish-portfolio",
+    "name": "Start Bootstrap Stylish Portfolio",
+    "source": "https://github.com/StartBootstrap/startbootstrap-stylish-portfolio.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-portfolio-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original portfolio kit."
+  },
+  {
+    "id": "business-casual",
+    "name": "Start Bootstrap Business Casual",
+    "source": "https://github.com/StartBootstrap/startbootstrap-business-casual.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-local-business-kit",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original local business kit."
+  },
+  {
+    "id": "sb-admin-2",
+    "name": "Start Bootstrap SB Admin 2",
+    "source": "https://github.com/StartBootstrap/startbootstrap-sb-admin-2.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-admin-starter",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original admin starter."
+  },
+  {
+    "id": "shop-homepage",
+    "name": "Start Bootstrap Shop Homepage",
+    "source": "https://github.com/StartBootstrap/startbootstrap-shop-homepage.git",
+    "license_expected": "MIT",
+    "product_slug": "kreovant-shop-starter",
+    "action": "audit_then_rebuild",
+    "notes": "Audit source and demo assets; create original storefront starter."
+  }
+]
