@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-22",
+  "note": "Seed ledger. Candidate status is not legal clearance. Update only with observed evidence.",
+  "products": [
+    {
+      "id": "resume",
+      "status": "STARTER_COMMITTED_NOT_RUNTIME_TESTED",
+      "rights": "PENDING",
+      "path": "products/kreovant-resume-studio/",
+      "features": [
+        "original responsive HTML/CSS",
+        "print/save PDF action",
+        "four editable project cards"
+      ],
+      "tests": [],
+      "blockers": [
+        "Need run browser and accessibility checks",
+        "Need add product README, changelog, third-party notices and QA report"
+      ]
+    }
+  ]
+}
