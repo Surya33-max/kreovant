@@ -1,0 +1,45 @@
+name: Kreovant Asset Audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: Re-fetch all upstream repositories
+        required: false
+        default: "false"
+        type: boolean
+  schedule:
+    - cron: "30 3 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out Kreovant
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Git
+        run: git --version
+      - name: Acquire sources and run license triage
+        run: |
+          if [ "${{ inputs.refresh }}" = "true" ]; then
+            python tools/asset_factory/asset_pipeline.py --refresh
+          else
+            python tools/asset_factory/asset_pipeline.py
+          fi
+      - name: Upload audit reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: kreovant-asset-audit
+          path: |
+            tools/asset_factory/reports/latest-audit.json
+            tools/asset_factory/reports/latest-audit.md
+          if-no-files-found: error
+          retention-days: 30
